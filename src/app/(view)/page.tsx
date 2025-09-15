@@ -16,11 +16,11 @@ export default function Home() {
           </Suspense>
         </div>
         <div className="w-full mx-auto lg:col-span-6 h-[60dvh] lg:h-full flex">
-          <Card className="flex-1 flex flex-col justify-start items-start p-2! gap-6">
+          <Card className="flex-1 flex flex-col justify-start items-start p-2! gap-6 overflow-x-hidden! overflow-y-auto">
             <Link
               prefetch={false}
               href={`https://www.geeky-gadgets.com/grok-4-2-sonoma-sky/`}
-              className="text-end ml-auto flex items-center gap-2 justify-end hover:underline!"
+              className="text-end ml-auto flex items-center gap-2 justify-end hover:underline! text-xs lg:text-base"
             >
               Powered by: Sonoma Sky Alpha
             </Link>

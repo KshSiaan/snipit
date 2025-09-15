@@ -35,7 +35,7 @@ export default function Summerizer() {
           <SpinnerBlock className="size-24 text-pink-300" />
         </div>
       ) : result ? (
-        <Card className="flex-1 flex flex-col p-2! gap-2 min-w-[99%]">
+        <Card className="flex-1 flex flex-col p-2! gap-2 min-w-[99%] overflow-x-hidden ">
           <Card className="h-12 flex items-center justify-between">
             <Button
               className="size-6 flex justify-center items-center"
@@ -57,8 +57,8 @@ export default function Summerizer() {
               Copy
             </Button>
           </Card>
-          <Card className="flex-1">
-            <article>{result}</article>
+          <Card className="flex-1 overflow-x-hidden overflow-y-auto max-h-dvh">
+            <article className="text-xs lg:text-base">{result}</article>
           </Card>
         </Card>
       ) : (
@@ -74,7 +74,7 @@ export default function Summerizer() {
       )}
       <div className="flex justify-end w-full items-center">
         <div className="flex-1">
-          <p className="text-zinc-400! hover:text-foreground transition-colors cursor-help flex gap-2">
+          <p className="text-zinc-400! text-xs lg:text-xs hover:text-foreground transition-colors cursor-help flex gap-2">
             <Image
               src={"/info.svg"}
               height={64}
