@@ -16,14 +16,17 @@ export default function Summerizer() {
       body: JSON.stringify({ article }),
     });
 
-    const res: { ok: boolean; data: string } = await call.json();
+    const res: { ok: boolean; data?: string; message?: string } =
+      await call.json();
+    console.log(res);
 
     if (!call.ok) {
-      toast.error(res.data);
+      toast.error(res.message!);
+      setLoading(false);
       return;
     }
     setLoading(false);
-    setResult(res.data);
+    setResult(res.data!);
   };
   return (
     <>
